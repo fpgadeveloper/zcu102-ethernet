@@ -1,7 +1,7 @@
 zcu102-ethernet
 ===============
 
-Example design for using the SFP ports of the ZCU102 for Gigabit Ethernet.
+Example design for using Ethernet on the ZCU102 board via it's RJ45 connector and SFP ports.
 
 ## Requirements
 
@@ -71,6 +71,17 @@ To use the sources in this repository, please follow these steps:
 
 The software application used to test these projects is the lwIP Echo Server example that is built into
 Xilinx SDK.
+
+## Port Connections
+
+The RJ45 connector is connected to GEM3 via the MIO interface.
+
+The SFP cages are connected to the GTH transceivers and AXI Ethernet IPs as follows:
+
+* Right-top cage, GTH X1Y12, axi_ethernet_0
+* Right-lower cage, GTH X1Y13, axi_ethernet_1 (not yet implemented)
+* Left-top cage, GTH X1Y14, axi_ethernet_2 (not yet implemented)
+* Left-lower cage, GTH X1Y15, axi_ethernet_3 (not yet implemented)
 
 ## About us
 

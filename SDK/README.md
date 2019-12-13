@@ -55,14 +55,8 @@ cd <path-to-repo>/SDK
 /<path-to-xilinx-tools>/SDK/2019.1/bin/xsdk -batch -source build-sdk.tcl
 ```
 
-The build script does three things:
-
-1. Prepares a local SDK repository containing a modified version of lwIP library,
-required by the echo server example application.
-2. Adds the ../EmbeddedSw directory as a local SDK repository.
-3. Generates a lwIP Echo Server example application for each exported Vivado design
-that is found in the ../Vivado directory. Most users will only have one exported
-Vivado design.
+The build script generates a lwIP Echo Server example application for each exported Vivado design
+that is found in the ../Vivado directory.
 
 ### Run the application
 
