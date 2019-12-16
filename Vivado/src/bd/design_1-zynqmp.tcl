@@ -65,7 +65,7 @@ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_ethernet axi_ethernet_0
 create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma axi_ethernet_0_dma
 
 # Port 0 configuration
-set_property -dict [list CONFIG.PHY_TYPE {SGMII} \
+set_property -dict [list CONFIG.PHY_TYPE {1000BaseX} \
 CONFIG.Frame_Filter {false} \
 CONFIG.gtrefclkrate {156.25} \
 CONFIG.RXMEM {32k} \
@@ -101,9 +101,9 @@ connect_bd_net [get_bd_pins const_sfp_tx_disable_n/dout] [get_bd_ports sfp1_tx_d
 connect_bd_net [get_bd_pins const_sfp_tx_disable_n/dout] [get_bd_ports sfp2_tx_disable_n]
 connect_bd_net [get_bd_pins const_sfp_tx_disable_n/dout] [get_bd_ports sfp3_tx_disable_n]
 
-# Create SGMII port
-create_bd_intf_port -mode Master -vlnv xilinx.com:interface:sgmii_rtl:1.0 sgmii_port_0
-connect_bd_intf_net [get_bd_intf_pins axi_ethernet_0/sgmii] [get_bd_intf_ports sgmii_port_0]
+# Create SFP port
+create_bd_intf_port -mode Master -vlnv xilinx.com:interface:sfp_rtl:1.0 sfp_0
+connect_bd_intf_net [get_bd_intf_pins axi_ethernet_0/sfp] [get_bd_intf_ports sfp_0]
 
 # Create the ref clk 156.25MHz port
 create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 ref_clk_156mhz

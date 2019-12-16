@@ -14,3 +14,5 @@ set_property IOSTANDARD LVCMOS33 [get_ports {sfp2_tx_disable_n}]
 set_property PACKAGE_PIN C13 [get_ports {sfp3_tx_disable_n}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sfp3_tx_disable_n}]
 
+set_property PACKAGE_PIN AG14 [get_ports {mmcm_locked_out_0}]
+set_property IOSTANDARD LVCMOS33 [get_ports {mmcm_locked_out_0}]
