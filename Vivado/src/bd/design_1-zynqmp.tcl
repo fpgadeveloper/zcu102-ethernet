@@ -114,6 +114,10 @@ connect_bd_intf_net [get_bd_intf_ports ref_clk_156mhz] [get_bd_intf_pins axi_eth
 #create_bd_port -dir O reset_port_0_n
 #connect_bd_net [get_bd_ports reset_port_0_n] [get_bd_pins axi_ethernet_0/phy_rst_n]
 
+# MMCM locked to LED0
+create_bd_port -dir O mmcm_locked_out_0
+connect_bd_net [get_bd_pins axi_ethernet_0/mmcm_locked_out] [get_bd_ports mmcm_locked_out_0]
+
 # DMA Connections
 connect_bd_intf_net [get_bd_intf_pins axi_ethernet_0_dma/M_AXIS_MM2S] [get_bd_intf_pins axi_ethernet_0/s_axis_txd]
 connect_bd_intf_net [get_bd_intf_pins axi_ethernet_0_dma/M_AXIS_CNTRL] [get_bd_intf_pins axi_ethernet_0/s_axis_txc]
